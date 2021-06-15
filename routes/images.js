@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/APOD', (req, res, next) => {
-    res.send("DEFAULT RESPONSE");
-})
+const { getAPODImage } = require('../controllers/imagesController');
+
+router.get('/APOD', getAPODImage)
 
 module.exports = router;
